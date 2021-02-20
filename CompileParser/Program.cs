@@ -9,29 +9,55 @@ namespace CompileParser
         static string input;
         static void Main(string[] args)
         {
+            //uncomment to get input from the console
             //string input = Console.ReadLine();
-            //input = " صحيح محمد٣  [3] ؛  \n  صحيح محمد٣   ) صحيح م٣   (، صحيح ؛ \n صحيح محمد٣  ؛";
-            //input = "صحيح العمر بب ؛==";
-            input = "حقيقي الاهلي() { { } { } { } { } { } { } }\nحقيقي الاهلي() {\nاذا(4)\n}\nحقيقي الاهلي() {\nاذا(شعبول)؛\n}";
-            //input = "خالي سيد (){ اذا (عيد > ابراهيم)  ايحاجه = -٥٥،٥٥؛}حقيقي محمد ()f{حقي =؛صحيح محمذ = ١٠؛}";
-            //input = "خالي سيد (){ محمد = -٨٨،٩؛ اذا (عيد > ابراهيم)  ايحاجه = -٥٥،٥٥؛ اخر اذا (سيد >= -٤)ايحاجه = احاجه؛ اخر ارجع ؛}حقيقي محمد (){حقي =٩؛صحيح محمذ ؛}";
-            // input = "خالي سيد (){بينما(محمد== ١٠){اذا (سيد < ابراهيم) ارجع؛ اخر سعد = ١٢؛اذا (عيد > ابراهيم) ارجع؛ اذا (سيد >= ٤)ايحاجه = أي حاجه؛ اخر ارجع ؛}}";
-            Errors.LErrors = new List<String>();
-            tok();
+
+            //input sample
+            input = "	صحيح محمد٣  ؛    ";
+
+
+
+
+            //uncomment if you want to see all tokens in the input
+            //tok();
+
+
+            //parse
             parser();
 
+
+
+
+
+            //printing all errors 
             foreach(var error in Errors.LErrors)
             {
                 Console.WriteLine(error);
             }
         }
 
+
+
+
+
+
+
+
+
+
+
+        //start parsing
         public static void parser()
         {
             Parser parser = new Parser(new Lexeme(input));
             parser.Start();
         }
 
+
+
+
+
+        //to see all tokens in the input string
         public static void tok()
         {
             Lexeme lexer = new Lexeme(input);
