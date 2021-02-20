@@ -1,6 +1,6 @@
 # Arabic-Compiler
 The scanner and parser Analyzer for an Arabic compiler
-##arabic comiler program input/output sample
+## Arabic comiler program input/output sample
 ![Programe Samle](Sample.png)
 # Arabic-Compiler grammer
 ![Grammer1](grammer1.png)
