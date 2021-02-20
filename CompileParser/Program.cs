@@ -10,16 +10,18 @@ namespace CompileParser
         static void Main(string[] args)
         {
             //uncomment to get input from the console
-            //string input = Console.ReadLine();
+            input = Console.ReadLine();
 
             //input sample
-            input = "	صحيح محمد٣  ؛    ";
+            //input = "	صحيح محمد٣  ؛    ";
 
 
-
+            //set to an instance of an object
+            Errors.LErrors = new List<string>();
 
             //uncomment if you want to see all tokens in the input
             //tok();
+
 
 
             //parse
